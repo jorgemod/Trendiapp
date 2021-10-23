@@ -9,7 +9,7 @@ import { DatabankService } from 'src/app/databank.service';
 export class PropuestaComponent implements OnInit {
   
   constructor(private prueba: DatabankService) { 
-    this.prueba.getPaises().subscribe( paises=>{
+    this.prueba.data().subscribe( paises=>{
       
       console.log(paises);
     })

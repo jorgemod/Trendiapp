@@ -9,12 +9,18 @@ var comprehend = new AWS.Comprehend({
     region: 'us-east-1'
 });
 
-var params = {
-    LanguageCode: 'es',
-    Text: 'texto'
-};
+const sentimientos = ()=>{
+    
+    var params = {
+        LanguageCode: 'es',
+        Text: 'chinga tu madre alexander'
+    };
+    
+    comprehend.detectSentiment(params, function(err, data){
+        if(err) console.log(err, err.stack);
+        else console.log(data);
+    });
+}
 
-comprehend.detectSentiment(params, function(err, data){
-    if(err) console.log(err, err.stack);
-    else console.log(data);
-});
+
+module.exports = sentimientos;
