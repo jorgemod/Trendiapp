@@ -6,16 +6,21 @@ import { AppComponent } from './app.component';
 
 import { NavComponent } from './components/common/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { PropuestaComponent } from './components/propuesta/propuesta.component';
+//paquete para el manejo de peticiones http
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    PropuestaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
