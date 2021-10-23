@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,500;1,100;1,200;1,500&display=swap');
 .btn{
     width: 90% ;
     margin: 30px;
@@ -5,4 +7,11 @@
 .card{
     width: 30%;
     margin-top: 20px;
+}
+
+* {
+    
+    /* font-family: 'Montserrat', sans-serif;
+    font-size: 100px; */
+    
 }

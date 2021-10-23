@@ -27,17 +27,3 @@ exports.getNewsMediaStack = async (req, res) => {
     else
         res.status(response.status).json({"message": "Error server"});
 }
-
-exports.getNewsMediaStackV2 = (req, res) => {
-    var url = 'http://api.mediastack.com/v1/news?access_key=2bb4b80023ee367e6dc6ac0120b09250&countries=co&keywords=BBVA';
-    axios.get(url)
-        .then( response => {
-            res.status(200).json({"message": "Petition successfully", "info": response});
-            return;
-        })
-        .catch( err => {
-            console.log(err);
-            res.status(500).json({"message": "Bad request", "info": err});
-            return;
-        });
-}
