@@ -4,8 +4,10 @@ const path = require('path');
 const app = express();
 const hostname = '127.0.0.1';
 const port = 3000;
-
+const cors = require('cors');
 // const routes = require('./routes/rutas.js');
+
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send("TrendiApp");
