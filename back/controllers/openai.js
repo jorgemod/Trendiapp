@@ -24,5 +24,4 @@ exports.getKeywords = (req,res) => {
     
         console.log(gptResponse.data);
     })();
-    res.send("echoo");
 };
