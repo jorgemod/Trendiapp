@@ -4,6 +4,7 @@ const axios = require('axios');
 const { reset } = require('nodemon');
 const urlNews = "http://api.mediastack.com/v1/news?";
 const accessKey = "2bb4b80023ee367e6dc6ac0120b09250";
+const sentimientosComprehend = require("../awsComprehend");
 
 exports.getNewsMediaStack = async (req, res) => {
     var url = urlNews + "access_key=" + accessKey;
@@ -11,6 +12,7 @@ exports.getNewsMediaStack = async (req, res) => {
     url += "&keywords=" + req.query.keywords;
     let maxNumberNewsItems = 10;
     let response = await fetch(url);
+    sentimientosComprehend();
     if(response.status >= 200 && response.status <= 299)
     {
         let newsBBVA = await response.json();
