@@ -5,7 +5,7 @@ import { PropuestaComponent } from './components/propuesta/propuesta.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
-  {path:'idea', component:PropuestaComponent},
+  {path:'idea/:id', component:PropuestaComponent},
   {path:'', pathMatch:'full', redirectTo: 'home'},
   {path:'**', pathMatch:'full', redirectTo: 'home'}
   
