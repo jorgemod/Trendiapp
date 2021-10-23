@@ -5,3 +5,10 @@
     font-family: 'Montserrat', sans-serif;
     
 }
+
+body {
+    height: 100vh;
+    background: rgb(4,6,107);
+    background: linear-gradient(45deg, rgba(4,6,107,1) 0%,rgba(5,9,50,1) 30%, rgba(5,9,50,1) 100%);
+    
+}
