@@ -26,4 +26,24 @@ const getKeywords = async (data) => {
     return gptResponse.data;
 };
 
-module.exports = getKeywords;
+const generatePhrase = async data => {
+    // console.log("data", data);
+    const gptResponse = await openai.complete({
+        engine: 'davinci',
+        prompt: 'Considero que una posible oportunidad para BBVA se presenta si consideramos: ',
+        maxTokens: 200,
+        temperature: 0.5,
+        topP: 1,
+        presencePenalty: 0,
+        frequencyPenalty: 0.8,
+        bestOf: 1,
+        n: 1,
+        stream: false,
+        stop: ['\n']
+    });
+
+    // console.log(gptResponse.data);
+    return gptResponse.data;
+}
+
+module.exports = { getKeywords, generatePhrase};

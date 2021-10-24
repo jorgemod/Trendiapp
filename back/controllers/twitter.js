@@ -1,5 +1,5 @@
 var Twit = require('twit');
-var getKeywords = require('./openai.js');
+var { getKeywords, generatePhrase } = require('./openai.js');
 var { sentimientos } = require('../awsComprehend.js');
 
 var T = new Twit({
@@ -35,8 +35,12 @@ exports.searchTwit = (req, res) => {
       })
     );
     // console.log("keywords", keywords);
+
+    const phrase = await generatePhrase("BBVA");
+    // console.log("phrase", phrase);
+
     res.send(data.statuses.map( (twit, index) => {
-      return {"twit": twit.text, "place": req.query.place_code, "sentimiento": result[index].Sentiment, "keywords": keywords[index].choices[0].text}
+      return {"twit": twit.text, "place": req.query.place_code, "sentimiento": result[index].Sentiment, "keywords": keywords[index].choices[0].text, "phrase": phrase.choices[0].text}
     }));
   });
 }
