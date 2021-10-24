@@ -1,0 +1,63 @@
+<body class="propuesta">
+  <div class="container p-5">
+    <ul class="nav">
+      <li class="nav-item">
+        <p class="categoria phrase"> {{pestania}}  </p>
+        <br><br>
+      </li>
+      <li class="nav-item">
+        <form action="/">
+          <label class="phrase" for="paises">País:</label>
+          <select name="pais" id="pais">
+            <option value="mex">MX🇲🇽</option>
+            <option value="co">COL🇨🇴</option>
+          </select>
+          <br><br>
+        </form>
+      </li>
+      <li class="nav-item">
+        <form action="/">
+          <label class="phrase" for="fuentes">    Fuente:</label>
+          <select name="fuente" id="fuente">
+            <option value="twitter">Twitter</option>
+            <option value="metamask">Noticias</option>
+          </select>
+          <br><br>
+        </form>
+      </li>
+    </ul>
+      <div class="row">
+          <div class="col-sm-6">
+            <div class="card keywords">
+              <div class="card-header">
+                <h5 class="card-title">keywords</h5>
+              </div>
+              <div class="card-body">
+                <div id="word-cloud">
+          
+                  <app-nube [palabras]="keyword"></app-nube>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img class="imagen-robot" src="/assets/RobotBBVA.png" alt="">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card resultado">
+              <div class="card-header">
+                <h5 class="card-title">Propuesta de valor</h5>
+              </div>
+              <div class="card-body mx-auto">
+                <p class="card-text">
+                  {{data.info[0].phrase}}
+                </p>
+                <div class="btnRe">
+                  <button href="#" class="btn btn-info">Regenerar idea</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</body>

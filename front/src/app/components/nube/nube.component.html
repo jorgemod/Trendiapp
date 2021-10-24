@@ -1,0 +1,22 @@
+<!-- 
+<angular-d3-cloud
+  [data]="data"
+  [width]="400"
+  [height]="300"
+  [padding]="5"
+  font="montserrat"
+  [rotate]="0"
+  [autoFill]="true"
+  
+></angular-d3-cloud> -->
+<div id="ptm" class="container">
+  <div class="row f">
+
+    <div  *ngFor="let item of palabras">
+      <!-- <button>{{ item.palabra}}</button> -->
+      <!-- <span>{{ item.palabra}}</span> -->
+      <button type="button" class="btn btn-primary btn-sm">{{item.palabra }}</button>
+      <!-- <p class="">{{ item.palabra}}</p> -->
+    </div>
+  </div>
+</div>
