@@ -22,7 +22,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 * [Angular](https://angular.io) - Framework usado
 * [NodeJS](https://nodejs.org/es/) - Backend usado
-* [Open AI](Ihttps://openai.com) - Inteligencia artificial
+* [Open AI](https://openai.com) - Inteligencia artificial
 * [Twitter](https://developer.twitter.com/en/docs/twitter-api) - API de Twitter
 * [Mediastack](https://mediastack.com/) - API de noticias
 
@@ -37,7 +37,7 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 * **Ivan** - - [vanyapb](https://github.com/vanyapb)
 * **Ruben** -  - [rvv3nd](https://github.com/rvv3nd)
 * **Alexander** - - [AlexanderVerse](https://github.com/AlexanderVerse)
-* **Arleth** - - [arleth_user](https://github.com/arleth_user)
+* **Arleth** - - [Arly07](https://github.com/Arly07)
 * **Manuel** - - [msalazar97](https://github.com/msalazar97)
 
 ## Licencia 📄
