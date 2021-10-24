@@ -63,5 +63,25 @@ async function sentimientos (data) {
     return response.ResultList;
 }
 
+async function feelings (data) {
+    const textList = data.map(news => {return news.description;})
+    let response;
 
-module.exports = sentimientos;
+    // console.log("textList", textList)
+    var params = {
+        LanguageCode: "es",//en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW, /* required */
+        TextList: textList
+    };
+    
+    try {
+        const command = new BatchDetectSentimentCommand(params);
+        response = await client.send(command);
+        // console.log("response", response);
+    } catch(err) {
+        console.log("err.message", err);
+    }
+    return response.ResultList;
+}
+
+
+module.exports = {sentimientos, feelings};

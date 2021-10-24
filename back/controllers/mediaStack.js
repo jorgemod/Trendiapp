@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 //const http = require('https');
 const axios = require('axios');
 const { reset } = require('nodemon');
+const { feelings } = require('../awsComprehend');
 const urlNews = "http://api.mediastack.com/v1/news?";
 const accessKey = "2bb4b80023ee367e6dc6ac0120b09250";
 
@@ -18,7 +19,12 @@ exports.getNewsMediaStack = async (req, res) => {
         newsBBVA.data.map( (news) => {
             arrayInfoNews.push({"author": news.author, "description": news.description, "url": news.url});
         });
-        res.status(response.status).json({"message": "Petition successfully", "info": arrayInfoNews});
+        const result = await feelings(arrayInfoNews);
+        console.log("result", result);
+        const data = arrayInfoNews.map((news, index) => {
+            return {"author": news.author, "description": news.description, "url": news.url, "sentimiento": result[index].Sentiment};
+        })
+        res.status(response.status).json({"message": "Petition successfully", "info": data});
     }
     else if(response.status >= 400 && response.status <= 499)
         res.status(response.status).json({"message": "Bad request"});
