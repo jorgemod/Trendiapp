@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const axios = require('axios');
 const { reset } = require('nodemon');
 const { feelings } = require('../awsComprehend');
-var getKeywords = require('./openai.js');
+var { getKeywords, generatePhrase } = require('./openai.js');
 const urlNews = "http://api.mediastack.com/v1/news?";
 const accessKey = "2bb4b80023ee367e6dc6ac0120b09250";
 
@@ -28,8 +28,12 @@ exports.getNewsMediaStack = async (req, res) => {
             })
         );
         // console.log("keywords", keywords);
+        
+        const phrase = await generatePhrase("BBVA");
+        // console.log("phrase", phrase);
+
         const data = arrayInfoNews.map((news, index) => {
-            return {"author": news.author, "description": news.description, "url": news.url, "sentimiento": result[index].Sentiment, "keywords": keywords[index].choices[0].text};
+            return {"author": news.author, "description": news.description, "url": news.url, "sentimiento": result[index].Sentiment, "keywords": keywords[index].choices[0].text, "phrase": phrase.choices[0].text};
         })
         res.status(response.status).json({"message": "Petition successfully", "info": data});
     }
