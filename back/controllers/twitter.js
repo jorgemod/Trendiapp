@@ -1,6 +1,6 @@
 var Twit = require('twit');
 var getKeywords = require('./openai.js');
-var sentimientos = require('../awsComprehend.js');
+var { sentimientos } = require('../awsComprehend.js');
 
 var T = new Twit({
   consumer_key:         'BExYU0PjOCDom40t2324RxDCt',

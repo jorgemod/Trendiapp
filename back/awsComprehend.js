@@ -83,5 +83,4 @@ const feelings = async (data) => {
     return response.ResultList;
 }
 
-
-module.exports = sentimientos, feelings;
+module.exports = { sentimientos, feelings };
