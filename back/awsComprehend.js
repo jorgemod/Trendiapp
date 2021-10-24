@@ -1,7 +1,7 @@
 const path = require('path')
 const fetch = require('node-fetch');
 var AWS = require('aws-sdk');
-const { ComprehendClient, BatchDetectSentimentCommand, BatchDetectSentimentRequest } = require("@aws-sdk/client-comprehend");
+const { ComprehendClient, BatchDetectSentimentCommand } = require("@aws-sdk/client-comprehend");
 var direccion = path.join(__dirname, "awsConfig.json")
 AWS.config.loadFromPath(direccion);
 
@@ -43,7 +43,7 @@ const fetchData = async (params) => {
     }
 }
 
-async function sentimientos (data) {
+const sentimientos = async (data) => {
     const textList = data.map(twit => {return twit.text;})
     let response;
 
@@ -63,7 +63,7 @@ async function sentimientos (data) {
     return response.ResultList;
 }
 
-async function feelings (data) {
+const feelings = async (data) => {
     const textList = data.map(news => {return news.description;})
     let response;
 
@@ -84,4 +84,4 @@ async function feelings (data) {
 }
 
 
-module.exports = {sentimientos, feelings};
+module.exports = sentimientos, feelings;

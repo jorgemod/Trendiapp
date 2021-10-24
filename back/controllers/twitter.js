@@ -1,4 +1,5 @@
 var Twit = require('twit');
+var getKeywords = require('./openai.js');
 var sentimientos = require('../awsComprehend.js');
 
 var T = new Twit({
@@ -28,8 +29,14 @@ exports.searchTwit = (req, res) => {
 
     const result = await sentimientos(data.statuses);
     // console.log("result", result);
+    let keywords = await Promise.all(
+      data.statuses.map(async twit => {
+          return await getKeywords(twit.text);
+      })
+    );
+    // console.log("keywords", keywords);
     res.send(data.statuses.map( (twit, index) => {
-      return {"twit": twit.text, "place": req.query.place_code, "sentimiento": result[index].Sentiment}            
+      return {"twit": twit.text, "place": req.query.place_code, "sentimiento": result[index].Sentiment, "keywords": keywords[index].choices[0].text}
     }));
   });
 }

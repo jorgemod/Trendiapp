@@ -7,11 +7,11 @@ const OPENAI_API_KEY = "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";
 const openai = new OpenAI(OPENAI_API_KEY);
 
 const getKeywords = async (data) => {
-    console.log("data", data);
+    // console.log("data", data);
     const gptResponse = await openai.complete({
         engine: 'davinci',
         prompt: 'Text: ' + data + ' \n\nKeywords:',
-        maxTokens: 60,
+        maxTokens: 90,
         temperature: 0.3,
         topP: 1,
         presencePenalty: 0,
