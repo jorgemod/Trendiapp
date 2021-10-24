@@ -60,7 +60,7 @@ async function sentimientos (data) {
     } catch(err) {
         console.log("err.message", err);
     }
-    return response;
+    return response.ResultList;
 }
 
 

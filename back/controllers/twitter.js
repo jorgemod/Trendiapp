@@ -28,8 +28,8 @@ exports.searchTwit = (req, res) => {
 
     const result = await sentimientos(data.statuses);
     console.log("result", result);
-    res.send(data.statuses.map( (twit) => {
-      return {"twit": twit.text, "place": twit.place, "sentimiento": "happy"}            
+    res.send(data.statuses.map( (twit, index) => {
+      return {"twit": twit.text, "place": twit.place, "sentimiento": result[index].Sentiment}            
     }));
   });
 }
