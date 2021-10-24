@@ -9,18 +9,22 @@ import { HomeComponent } from './components/home/home.component';
 import { PropuestaComponent } from './components/propuesta/propuesta.component';
 //paquete para el manejo de peticiones http
 import { HttpClientModule } from '@angular/common/http';
+import { AngularD3CloudModule } from 'angular-d3-cloud';
+import { NubeComponent } from './components/nube/nube.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    PropuestaComponent
+    PropuestaComponent,
+    NubeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularD3CloudModule
   ],
   providers: [],
   bootstrap: [AppComponent]
