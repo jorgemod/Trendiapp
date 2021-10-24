@@ -1,0 +1,11 @@
+#ptm{
+    display: block;/* or inline-block */
+    text-overflow: ellipsis;
+    
+    overflow: auto;
+    height: 300px;
+}
+
+.f{
+    margin-left: 75px;
+}
