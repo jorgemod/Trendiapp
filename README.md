@@ -1,7 +1,8 @@
 
 # TrendiApp
 
-Obten sugerencias de acciones basadas en Tweets y noticas del momento
+## Obten sugerencias de acciones basadas en Tweets y noticas del momento
+Made with ❤️ by Semid 😊
 
 ## Comenzando 🚀
 
@@ -43,6 +44,3 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-
-Made with ❤️ by [Semid]() 😊
