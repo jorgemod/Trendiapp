@@ -47,7 +47,7 @@ async function sentimientos (data) {
     const textList = data.map(twit => {return twit.text;})
     let response;
 
-    console.log("textList", textList)
+    // console.log("textList", textList)
     var params = {
         LanguageCode: "es",//en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW, /* required */
         TextList: textList
@@ -56,7 +56,7 @@ async function sentimientos (data) {
     try {
         const command = new BatchDetectSentimentCommand(params);
         response = await client.send(command);
-        console.log("response", response);
+        // console.log("response", response);
     } catch(err) {
         console.log("err.message", err);
     }

@@ -22,14 +22,14 @@ const fetchData = async (res, data) => {
 }
 
 exports.searchTwit = (req, res) => {
-  T.get('search/tweets', { q: req.query.word + ' since:2020-03-01', value: 'place_country: MX', count: 10 }, async function(err, data, response) {
+  T.get('search/tweets', { q: req.query.word + ' since:2020-03-01', lang:'es', value: 'country_code: ' + req.query.place_code, lang: 'es', count: 25 }, async function(err, data, response) {
     // console.log("req.params", req.query.word);
     // console.log("data", data);
 
     const result = await sentimientos(data.statuses);
-    console.log("result", result);
+    // console.log("result", result);
     res.send(data.statuses.map( (twit, index) => {
-      return {"twit": twit.text, "place": twit.place, "sentimiento": result[index].Sentiment}            
+      return {"twit": twit.text, "place": req.query.place_code, "sentimiento": result[index].Sentiment}            
     }));
   });
 }
