@@ -8,6 +8,7 @@ import { DatabankService } from 'src/app/databank.service';
   styleUrls: ['./propuesta.component.css']
 })
 export class PropuestaComponent implements OnInit {
+  
   pestania; 
   data: any = [];
   palabras: any [] = [];
@@ -40,6 +41,7 @@ export class PropuestaComponent implements OnInit {
 
       this.prueba.tweets().subscribe( data =>{
         this.data = data;    
+        console.log(data);    
         this.data.map( dato =>{
           let keywordss = dato.keywords.split(' ');
           keywordss.map((palabra,index) =>{
@@ -60,7 +62,8 @@ export class PropuestaComponent implements OnInit {
     }
     else{
       this.prueba.noticias().subscribe( data =>{
-        this.data = data;    
+        this.data = data;   
+        console.log(data);  
         this.data.info.map( dato =>{
           let keywordss = dato.keywords.split(' ');
           keywordss.map((palabra,index) =>{
